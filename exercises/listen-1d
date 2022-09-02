@@ -14,11 +14,11 @@ print(noten[2])
 print(len(noten))
 print(noten[ len(noten) - 1 ])
 
-# 3) Schleife über alle Elemente der Liste
+# 3) Schleife über alle Elemente der Liste. Wiederholt sich und jedes mal das nächste Glied anzeigen.
 for note in noten:
     print(note)
 
-# 4) Schleife über alle Elemente der Liste mit Index
+# 4) Schleife über alle Elemente der Liste mit Indexnummer
 # (beginnt bei 0 und endet mit 1 weniger als Länge der Liste)
 for index in range(0, len(noten)):
     print(index, ':', noten[index])
