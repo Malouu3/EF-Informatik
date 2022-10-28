@@ -1,6 +1,3 @@
-# Variablen
-dfrom this import d
-
 
 gesucht = 'buchstabe'
 
@@ -48,7 +45,7 @@ def game_over():
     return False
 
 def play():
-    while not game_over:
+    while not game_over()d:
         show()
         inp = eingabe()
         auswerten(inp)
