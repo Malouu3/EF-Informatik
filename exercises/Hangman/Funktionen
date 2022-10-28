@@ -1,4 +1,7 @@
 # Variablen
+dfrom this import d
+
+
 gesucht = 'buchstabe'
 
 gefunden = []
@@ -46,13 +49,12 @@ def game_over():
 
 def play():
     while not game_over:
-        buchstabe = eingabe()
-        print(buchstabe)
-        auswerten(buchstabe)
         show()
+        inp = eingabe()
+        auswerten(inp)
     if gewonnen():
-        print('....')
+        print('Gewonnen :)')
     else:
-        print("schade")
+        print('Verloren :(', gesucht)
 
 play()
