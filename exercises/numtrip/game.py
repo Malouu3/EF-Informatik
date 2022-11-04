@@ -6,35 +6,31 @@ board = [
     [2, 4, 4, 4, 4]
 ]
 
+
+
+def Brett():
 # Zeilen nacheinander aus dem Board
-for zeile in board:
-    for zelle in zeile:
-        # macht die wagrechten linien. so viele Linien wie anzahl Zellen
-        print(' -', end='')
-    print(' ')
-    #Bildet die einzelnen Werte der Zellen nacheinader ab.
-    for zelle in zeile:
-        #f'' formatiert Zellenwert mit Text. end='' verhindert den Zeilenumbrung
-        print(f'|{zelle}', end='')
-    print('|')
-
-# die untersten wagrechten Linien
-for zelle in board[0]:
-    print(' -', end='')
-print(' ')
-
-'''
-def brett():
+    spalten = len(board[1])+1
+    print('   ', end='')
+    for spalte in range(1, spalten):
+        print(f' {spalte}', end='')
+    print('')
     for zeile in board:
+        print('   ', end='')
         for zelle in zeile:
-            print(' -', end='')
-        print(' ')
+            # macht die wagrechten linien. so viele Linien wie anzahl Zellen
+            print('--', end='')
+        print('-')
+        print(len(board), ' ', end='')
+        #Bildet die einzelnen Werte der Zellen nacheinader ab.
         for zelle in zeile:
+            #f'' formatiert Zellenwert mit Text. end='' verhindert den Zeilenumbrung
             print(f'|{zelle}', end='')
         print('|')
+    # die untersten wagrechten Linien
+    print('   ', end='')
+    for zelle in board[0]:
+        print('--', end='')
+    print('-')
 
-for zelle in board[0]:
-    print(' -', end='')
-print(' ')
-
-'''
+Brett()
