@@ -40,3 +40,20 @@ def Brett():
     print('-')
 
 Brett()
+
+eingabe = input("Zeile: ")
+try:
+    x = int(eingabe)
+    print(x)
+except:
+    print("Falsch")
+    
+
+eingabe = input("Spalte: ")
+try:
+    y = int(eingabe)
+    print(x)
+except:
+    print("Falsch")
+    
+print(board[x[y]])
