@@ -7,7 +7,7 @@ board = [
 ]
 
 
-#Brett
+##Brett
 
 def spalten_nummer(n):          #Spaltennummern
     print('   ', end='')
@@ -41,11 +41,26 @@ def show():         #show() == zeigen des Brettes
 ##Eingabe
 
 def eingabe():
-    x = input('Spalte?: ')
-    x = int(x)
+    x = input('Spalte?: ')   
+    x = überpüfung_eingabe(x)
     y = input('Zeile: ')
+    y = überpüfung_eingabe(y)
     y = int(y)
     return(x - 1, y -1)
+
+## Überprüfung Eingabe
+def überpüfung_eingabe(m):
+    m = m.strip()
+    m = int(m)
+    try:
+        0 < m < len(board[])
+        return m
+    except:
+        return False
+
+    
+
+## Ausgabe der Eingabe
 
 def process(Spalte, Zeile):     #Die ausgewählte Zelle wird mit dem Wert 0 gefüllt
     board[Zeile][Spalte] = 0
