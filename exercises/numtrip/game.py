@@ -52,7 +52,7 @@ except:
 eingabe = input("Spalte: ")
 try:
     y = int(eingabe)
-    print(x)
+    print(y)
 except:
     print("Falsch")
     
