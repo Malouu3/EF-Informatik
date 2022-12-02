@@ -6,33 +6,39 @@ board = [
     [2, 4, 4, 4, 4]
 ]
 
-def spalten_nummer(n):
+
+#Brett
+
+def spalten_nummer(n):          #Spaltennummern
     print('   ', end='')
     for i in range(n):
         print(f' {i + 1}  ', end='')
     print('')
 
-def strich_horizontal(n):
+def strich_horizontal(n):       #Strich zwischen den Zeilen
     print('  ', end='')
     for i in range(n):
         print('----', end='')
     print('-')
 
-def print_zelle(z):
+def print_zelle(z):             #Zelleninhalt
     print(f'| {z} ', end='')
 
-def print_zeile(zeile_nr):
-    print(f'{zeile_nr + 1} ', end='')
-    for zelle in board[zeile_nr]:
+def print_zeile(zeile_nr):              #Zeile wird Definiert = print_zeile(i) --> for i in range(len(board[0]))
+    print(f'{zeile_nr + 1} ', end='')   #Zuerst die Zeilennummer
+    for zelle in board[zeile_nr]:       #print_zelle(z) --> for z in board[len(board[0])]
         print_zelle(zelle)
     print('|')
 
-def show():
-    spalten_nummer(len(board[0]))
-    for i in range(len(board)):
+def show():         #show() == zeigen des Brettes
+    spalten_nummer(len(board[0]))       #1. Spaltennummer machen
+    for i in range(len(board)):         #2. Zeilenstrich + Zeilen mit Inhalt
         strich_horizontal(len(board[i]))
         print_zeile(i)
-    strich_horizontal(len(board[0]))
+    strich_horizontal(len(board[0]))    #3. Schlussstrich
+
+
+##Eingabe
 
 def eingabe():
     x = input('Spalte?: ')
@@ -41,13 +47,13 @@ def eingabe():
     y = int(y)
     return(x - 1, y -1)
 
-def process(Spalte, Zeile):
+def process(Spalte, Zeile):     #Die ausgewählte Zelle wird mit dem Wert 0 gefüllt
     board[Zeile][Spalte] = 0
 
 def play():
-    show()
-    while True:
-        x, y = eingabe()
+    show()                  # 1. Brett abdrucken
+    while True:             # 2. Solange Eingabe gemacht wird, geht es weiter
+        x, y = eingabe()    # 3. Neues Brett wird abgedruckt<
         process(x, y)
         show()
 
