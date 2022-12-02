@@ -6,7 +6,54 @@ board = [
     [2, 4, 4, 4, 4]
 ]
 
+def spalten_nummer(n):
+    print('   ', end='')
+    for i in range(n):
+        print(f' {i + 1}  ', end='')
+    print('')
 
+def strich_horizontal(n):
+    print('  ', end='')
+    for i in range(n):
+        print('----', end='')
+    print('-')
+
+def print_zelle(z):
+    print(f'| {z} ', end='')
+
+def print_zeile(zeile_nr):
+    print(f'{zeile_nr + 1} ', end='')
+    for zelle in board[zeile_nr]:
+        print_zelle(zelle)
+    print('|')
+
+def show():
+    spalten_nummer(len(board[0]))
+    for i in range(len(board)):
+        strich_horizontal(len(board[i]))
+        print_zeile(i)
+    strich_horizontal(len(board[0]))
+
+def eingabe():
+    x = input('Spalte?: ')
+    x = int(x)
+    y = input('Zeile: ')
+    y = int(y)
+    return(x - 1, y -1)
+
+def process(Spalte, Zeile):
+    board[Zeile][Spalte] = 0
+
+def play():
+    show()
+    while True:
+        x, y = eingabe()
+        process(x, y)
+        show()
+
+play()
+
+'''
 
 def Brett():
 # Zeilen nacheinander aus dem Board
@@ -57,3 +104,5 @@ except:
     print("Falsch")
     
 print(board[x[y]])
+'''
+
