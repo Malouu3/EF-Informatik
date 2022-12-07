@@ -14,4 +14,4 @@ Lieblingsgames:
 - Assassin's Greed
 - Genshin Impact
 
-![](./Pictures/20210603-DSC08334.jpg)"Random Bild"
+![](20210603-DSC08334.jpg)"Random Bild"
