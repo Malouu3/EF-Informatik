@@ -1,11 +1,17 @@
-# EF-Informatik
+# Steckbrief
 
-```py
+Name:
+- Malou Zesiger
 
-print('Hello World')
+Wohnort:
+- Walperswil
 
-```
+Hobbies:
+- Serien
+- Bücher
 
-## 26.08.2022
+Lieblingsgames:
+- Assassin's Greed
+- Genshin Impact
 
-Haben heute verschiedene Computersprachen angeschaut. Selbstständig habe ich dann Aufgaben über Turtle gemacht. Waren nicht schwierig.
+![](./Pictures/20210603-DSC08334.jpg)"Random Bild"
