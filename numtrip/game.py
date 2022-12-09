@@ -41,30 +41,32 @@ def show():         #show() == zeigen des Brettes
 ##Eingabe
 
 def eingabe():
-    x = input('Spalte?: ')   
-    x = überpüfung_eingabe(x)
-    y = input('Zeile: ')
-    y = überpüfung_eingabe(y)
-    return(x - 1, y -1)
-
-## Überprüfung Eingabe
-def überpüfung_eingabe(m):
+    feld_xy = input('Feld (Spalte, Zeile)?: ').strip(",")
     try:
-        m = m.strip()
-        m[0].isnumeric()
-        m = int(m)
-        m == 3
-        print(m, ' ist gut')
-        return m
+        feld_xy = [int(i) -1 for i in feld_xy] #die beiden Zahlen je -1 rechnen. Ergebnis als Liste ausgegeben
+        feld_x = feld_xy[0]
+        feld_y = feld_xy[1]
+        überprüfung(feld_x)
+        überprüfung(feld_y)
+        return feld_x, feld_y
     except:
-        print(m, 'ist schlecht')
+        print('Ungültige Eingabe')
+        eingabe()
+    
+def überprüfung(m):
+    try:
+        m.isnumeric()
+        -1 < m < len(board)
+        return True   
+    except:
+        print('falsche Eingabe')
         return False
 
     
 
 ## Ausgabe der Eingabe
 
-def process(Spalte, Zeile):     #Die ausgewählte Zelle wird mit dem Wert 0 gefüllt
+def process(Zeile, Spalte):     #Die ausgewählte Zelle wird mit dem Wert 0 gefüllt
     board[Zeile][Spalte] = 0
 
 def play():
