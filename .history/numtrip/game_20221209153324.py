@@ -68,7 +68,7 @@ def überprüfung(m):
 ## Ausgabe der Eingabe
 
 def process(Zeile, Spalte):     #Die ausgewählte Zelle wird mit dem Wert 0 gefüllt
-    (board[Zeile, Spalte])
+    index(board[Zeile, Spalte])
     board[Zeile][Spalte] = 0
 
 def play():
