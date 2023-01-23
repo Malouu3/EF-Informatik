@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkef_website_template=self.webpackChunkef_website_template||[]).push([[535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"26.08.2022-blog","permalink":"/EF-Informatik/26.08.2022-blog"},{"title":"Das fertige NumTrip","permalink":"/EF-Informatik/NumTrip"}]}')}}]);
