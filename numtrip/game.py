@@ -14,19 +14,19 @@ m = len(board)      #Anzahl Zeilen
 ##Brett
 
 def spalten_nummer(n):          #Spaltennummern
-    print('   ', end='')
+    print('    ', end='')
     for i in range(n):
-        print(f' {i + 1}  ', end='')
+        print(f' {i + 1}    ', end='')
     print('')
 
 def strich_horizontal(n):       #Strich zwischen den Zeilen
     print('  ', end='')
     for i in range(n):
-        print('----', end='')
+        print('------', end='')
     print('-')
 
 def print_zelle(z):             #Zelleninhalt
-    print(f'| {z} ', end='')
+    print(f'|  {z}  ', end='')
 
 def print_zeile(zeile_nr):              #Zeile wird Definiert = print_zeile(i) --> for i in range(len(board[0]))
     print(f'{zeile_nr + 1} ', end='')   #Zuerst die Zeilennummer
