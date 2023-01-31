@@ -1,0 +1,36 @@
+
+# Funktion mit zwei Parameter
+def eingabe_überprüfung(zeile, spalte):     # überprüfen, ob eingabe ne Nummer ist, und ob das Feld existiert.
+    try:
+        x = (int(spalte.isnumeric()) - 1)  #Wenn nich numeric, wird -1 ausgegeben
+        y = (int(zeile.isnumeric()) - 1)    # zeile ist noch ein strip, (isnummeric()), dann in einen zahlenwert (int())
+    # Python Scopes: n/m = globale, x/y = lokale Variablen
+        if x < 0 or x > n:                  # n = Anzahl Spalten ==> 1 - n
+            print("Eingabe zur Spalte ungültig")
+            return False
+        if y < 0 or y > m:      # m = Anzahl Zeilen ==> 1 - m
+            print("Eingabe zur Zeile ungültig")
+            return False
+        return True
+    except:
+        print("Versuch es noch einmal")
+        return False
+
+def gültigkeit_feld(zeile, spalte):
+    zeile = (int(zeile)) -1
+    spalte = (int(spalte)) -1
+
+# Wenn eines der Nachbarfelder den gleichen Wert hat, wird True zurückgegeben.    
+    # überprüfung rechts
+    if (spalte + 1) <= (n-1) and board[zeile][spalte] == board[zeile][spalte + 1]:
+        return True         # 1. schauen, ob es rechts ein Feld gibt, 2. schauen, ob das rechte Feld den gleichen Wert hat.
+    # überprüfung links
+    if (spalte - 1) <= (n-1) and board[zeile][spalte] == board[zeile][spalte - 1]:
+        return True
+    # überprüfung unten
+    if (zeile + 1) <= (m-1) and board[zeile][spalte] == board[zeile + 1][spalte]:
+        return True
+    # überprüfung oben
+    if (zeile - 1) <= (m-1) and board[zeile][spalte] == board[zeile - 1][spalte]:
+        return True
+    
