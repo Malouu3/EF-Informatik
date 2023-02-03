@@ -136,13 +136,9 @@ def feld_auffüllen(zeile, spalte, feldzahl):
                     zeilenindex = zeilenindex - 1
                 # Startpunkt bekommt denn wert oberhalb von ihm. Die leere Zelle wird random gefüllt.
                 board[ort_auf_y][ort_auf_x] = board[zeilenindex][ort_auf_x]
-                board[zeilenindex][ort_auf_x] = 0
+                board[zeilenindex][ort_auf_x] = 0  # random.choice([2, 4, 8])
             ort_auf_x = ort_auf_x - 1
         ort_auf_y = ort_auf_y - 1
-    for y in range(len(board)):
-        for x in range(len(board[0])):
-            if board[y][x] == 0:
-                board[y][x] = random.choice([2, 4, 8])
 
 
 # Ausgang des Spiesls
