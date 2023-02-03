@@ -124,17 +124,21 @@ def aufdecken(zeile, spalte, feldzahl):  # Die ausgewählte Zelle wird mit dem W
 
 def feld_auffüllen(zeile, spalte, feldzahl):
     board[zeile][spalte] = feldzahl * 2
-    for y in range(m - 1, 0, -1):
-        for x in range(n - 1, 0, -1):
+    ort_auf_y = n-1
+    for y in board[-1::-1]:
+        ort_auf_x = m-1
+        for x in y[-1::-1]:
             if x == 0:  # Wenn die Zelle den Wert 0 hat...
-                zeilenindex = y  # ...merkt sich die Zeile
+                zeilenindex = ort_auf_y  # ...merkt sich die Zeile
                 # solange nicht an der obersten Zeile angelangt oder die höhere Zelle nicht den Wert 0 hat...
-                while not zeilenindex <= 0 and board[zeilenindex][x] == 0:
+                while not zeilenindex <= 0 and board[zeilenindex][ort_auf_x] == 0:
                     # wird weiter höher gegangen.
                     zeilenindex = zeilenindex - 1
                 # Startpunkt bekommt denn wert oberhalb von ihm. Die leere Zelle wird random gefüllt.
-                board[y][x] = board[zeilenindex][x]
-                board[zeilenindex][x] = 0
+                board[ort_auf_y][ort_auf_x] = board[zeilenindex][ort_auf_x]
+                board[zeilenindex][ort_auf_x] = 0
+            ort_auf_x = ort_auf_x - 1
+        ort_auf_y = ort_auf_y - 1
     for y in range(m):
         for x in range(n):
             if board[y][x] == 0:
