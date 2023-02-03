@@ -2,9 +2,9 @@ import random
 
 
 n = 5  # Anzahl Spalten
-m = 5  # Anzahl Zeilen
+m = n  # Anzahl Zeilen
 
-board = [[2**random.randint(1, 3) for i in range(1, m + 1)]
+board = [[2**random.randint(1, 4) for i in range(1, m + 1)]
          for j in range(1, m + 1)]
 
 # Brett
