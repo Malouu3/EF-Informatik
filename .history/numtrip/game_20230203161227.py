@@ -25,12 +25,7 @@ def strich_horizontal(n):  # Strich zwischen den Zeilen
 
 
 def print_zelle(z):  # Zelleninhalt
-    if 99 > z > 9:
-        print(f'|  {z} ', end='')
-    elif z > 99:
-        print(f'| {z} ', end='')
-    else:
-        print(f'|  {z}  ', end='')
+    print(f'|  {z}  ', end='')
 
 
 # Zeile wird Definiert = print_zeile(i) --> for i in range(len(board[0]))
