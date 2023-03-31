@@ -48,7 +48,7 @@ Netzwerkteil: 0000 1101.1010 0010.0001 100
 Hostteil:                                 1.0000 0100
 ```
 
-__Netzwerkadesse__: Netzwerkteil mit 0en auf 32 Bit langen IP-Adresse auffüllen. Wird gebraucht, wenn mehrere Netzwerke miteinander über __Router__ verbunden werden.
+__Netzwerkadesse__: Netzwerkteil mit 0en auf 32 Bit langen IP-Adresse auffüllen. Wird gebraucht, wenn mehrere Netzwerke miteinander über __Router__ verbunden werden. Der Router verteilt seinen Host die Netzmaske. => Netzwerkteil aller Geräte im Netz sind gleich.
 
 ### Suffixnotation für Netzmaske
 
@@ -62,11 +62,16 @@ Beispiel IP-Adresse mit Suffix:
 `13.162.25.4/23`
 
 
+## Broadcastadresse
 
+
+
+## Spezielle IP-Adressen
+
+- __127.0.0.1__:
+ __"Loopback-Adresse"__. Wenn ein Gerät ein Paket an _sich selber_ senden will.
 
 
 ## ***Fragen***
 
-- [ ] Hat jeder Router seine eigene Netzmaske oder jede IP-Adresse?
 - [ ] 
-
