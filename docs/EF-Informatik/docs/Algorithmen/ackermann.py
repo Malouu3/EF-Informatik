@@ -1,28 +1,17 @@
-import matplotlib.pyplot as plt
+m = 3
+n = 1
 
-def ackermann(m, n, results=None):
-    if results is None:
-        results = []
-    
+def ackermann(m, n):
+    """Berechnet die Ackermann-Funktion für gegebene m und n."""
     if m == 0:
-        result = n + 1
+        return n + 1
     elif m > 0 and n == 0:
-        result = ackermann(m - 1, 1, results)
+        return ackermann(m - 1, 1)
     elif m > 0 and n > 0:
-        result = ackermann(m - 1, ackermann(m, n - 1, results), results)
+        return ackermann(m - 1, ackermann(m, n - 1))
+    else:
+        return None  # Für den Fall, dass m oder n negativ sind
 
-    results.append(result)
-    return result
+# Beispielaufrufe
+print(ackermann(m, n))  # Gibt 1 zurück
 
-# Ergebnisliste
-results = []
-
-# Ackermann-Funktion für kleine Werte aufrufen
-ackermann(2, 2, results)
-
-# Ergebnisse plotten
-plt.plot(results)
-plt.title('Ackermann-Funktion Ergebnisse (m=2, n=2)')
-plt.xlabel('Aufruf')
-plt.ylabel('Ergebnis')
-plt.show()
